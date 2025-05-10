@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "webtechy.github.io",
+    "description": "",
+    "home_page_url": "https://webtechy.github.io",
+    "feed_url": "https://webtechy.github.io/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "webtechy"
+    },
+    "items": [
+    ]
+}
