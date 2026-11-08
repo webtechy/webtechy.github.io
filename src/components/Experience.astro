@@ -1,0 +1,141 @@
+---
+import { profileData } from '../data/profile';
+---
+
+<section id="experience" class="py-16 sm:py-20 border-t border-slate-200/80 dark:border-slate-800/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header with Quick Actions -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+      <div>
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
+          <span>02 // Career & Resume</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+          Work History & Experience
+        </h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400">
+          Proven track record architecting resilient infrastructure, cloud integrations, and high-performance Jamstack systems.
+        </p>
+      </div>
+
+      <!-- Resume Download / Print Action -->
+      <button
+        onclick="window.print()"
+        class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-white shadow-xs transition-all self-start sm:self-auto"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Export Resume PDF
+      </button>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 sm:ml-4 pl-6 sm:pl-8 space-y-12">
+      {profileData.experiences.map((exp) => (
+        <div class="relative group card-print">
+          <!-- Timeline Pin -->
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-white dark:bg-slate-950 border-2 border-blue-600 dark:border-blue-500 group-hover:scale-125 transition-transform"></div>
+
+          <!-- Role Header -->
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                {exp.role}
+              </h3>
+              <p class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                {exp.company}
+              </p>
+            </div>
+            <div class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400 sm:text-right">
+              <span>{exp.period}</span>
+              <span class="mx-1">•</span>
+              <span>{exp.location}</span>
+            </div>
+          </div>
+
+          <!-- Description Summary -->
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            {exp.description}
+          </p>
+
+          <!-- Key Accomplishments List -->
+          <ul class="space-y-2 mb-4">
+            {exp.achievements.map((item) => (
+              <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2">
+                <span class="text-blue-500 font-bold shrink-0 mt-0.5">›</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Skills Badges -->
+          <div class="flex flex-wrap gap-1.5 pt-1 print:hidden">
+            {exp.skills.map((skill) => (
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Education & Continuous Learning Section -->
+    <div class="mt-16 pt-12 border-t border-slate-200/60 dark:border-slate-800/60 grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Education Card -->
+      <div class="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-800 flex items-center justify-center text-blue-600 dark:text-blue-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+            </svg>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">
+            Education & Background
+          </h3>
+        </div>
+        {profileData.education.map((edu) => (
+          <div>
+            <div class="text-sm font-bold text-slate-900 dark:text-slate-100">{edu.degree}</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">{edu.institution} • {edu.period}</div>
+            {edu.details && <p class="text-xs text-slate-600 dark:text-slate-400">{edu.details}</p>}
+          </div>
+        ))}
+      </div>
+
+      <!-- Certifications / Focus Areas Card -->
+      <div class="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+            </svg>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">
+            Specializations & Continuous Focus
+          </h3>
+        </div>
+        <div class="space-y-3">
+          {profileData.certifications.map((cert) => (
+            <div class="flex items-start justify-between text-xs">
+              <div>
+                <span class="font-semibold text-slate-800 dark:text-slate-200 block">{cert.name}</span>
+                <span class="text-slate-500 dark:text-slate-400">{cert.issuer}</span>
+              </div>
+              <span class="font-mono text-slate-400 shrink-0">{cert.date}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

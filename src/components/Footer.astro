@@ -1,0 +1,41 @@
+---
+import { profileData } from '../data/profile';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-10 transition-colors">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand & Copyright -->
+      <div class="flex flex-col items-center sm:items-start gap-1">
+        <div class="flex items-center gap-2">
+          <span class="w-6 h-6 rounded-md bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-mono font-bold text-xs">
+            W
+          </span>
+          <span class="font-bold text-sm text-slate-900 dark:text-white">
+            {profileData.name}
+          </span>
+        </div>
+        <p class="text-xs text-slate-500 dark:text-slate-400">
+          © {currentYear} {profileData.name}. All rights reserved.
+        </p>
+      </div>
+
+      <!-- Tech Stack & CI/CD info -->
+      <div class="flex flex-col sm:flex-row items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>CI/CD via GitHub Actions</span>
+        </div>
+        <span class="hidden sm:inline">•</span>
+        <span>Built with Astro & Tailwind CSS</span>
+        <span class="hidden sm:inline">•</span>
+        <a href="#header" class="text-blue-600 dark:text-blue-400 hover:underline">
+          Back to top ↑
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
