@@ -51,13 +51,28 @@ const otherProjects = profileData.projects.filter((p) => p.id !== 'homelab-priva
             </p>
           </div>
 
-          <!-- Quick Tags -->
-          <div class="flex flex-wrap lg:justify-end gap-1.5 max-w-sm">
-            {homelabProject.tags.map((tag) => (
-              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                {tag}
-              </span>
-            ))}
+          <!-- Actions & Tags -->
+          <div class="flex flex-col items-start lg:items-end gap-3 shrink-0">
+            {homelabProject.githubUrl && (
+              <a
+                href={homelabProject.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-white transition-all shadow-xs"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path>
+                </svg>
+                View Repository (mbabros/homelab) ↗
+              </a>
+            )}
+            <div class="flex flex-wrap lg:justify-end gap-1.5 max-w-sm">
+              {homelabProject.tags.map((tag) => (
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -92,7 +107,7 @@ const otherProjects = profileData.projects.filter((p) => p.id !== 'homelab-priva
             </div>
           </div>
           <p class="text-xs text-center text-slate-500 dark:text-slate-400 italic">
-            Diagram: Multi-tier routing connecting Cloudflare, Oracle Cloud free tier reverse proxy, Tailscale mesh, Apple M4 Mac mini, and QNAP NAS.
+            Refreshed Topology: Cloudflare wildcard DNS, OCI Caddy edge ingress, Tailscale WireGuard mesh, Coolify PaaS & Traefik v3 on Apple Silicon (OrbStack), and outbound GitHub Actions self-hosted runner.
           </p>
         </div>
 
@@ -106,7 +121,7 @@ const otherProjects = profileData.projects.filter((p) => p.id !== 'homelab-priva
               <h4 class="text-sm font-bold text-slate-900 dark:text-white">Domain & DNS (Cloudflare)</h4>
             </div>
             <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              Domain registrar and authoritative DNS/CDN. Manages DNS records, CNAMEs, A records, MX email routing, and alias forwarding in a single centralized panel with global edge caching and DDoS shield.
+              Wildcard DNS management with automated DNS-01 ACME challenge resolution for wildcard Let's Encrypt certificates, DDoS mitigation, and global edge CDN caching.
             </p>
           </div>
 
@@ -114,10 +129,10 @@ const otherProjects = profileData.projects.filter((p) => p.id !== 'homelab-priva
           <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
             <div class="flex items-center gap-2 mb-2">
               <span class="w-2 h-2 rounded-full bg-red-500"></span>
-              <h4 class="text-sm font-bold text-slate-900 dark:text-white">Proxy Layer (Oracle Cloud Free Tier)</h4>
+              <h4 class="text-sm font-bold text-slate-900 dark:text-white">Edge Ingress (Oracle Cloud Free Tier)</h4>
             </div>
             <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              Nginx Proxy Manager hosted on an Always-Free OCI VM. Connects to self-hosted homelab nodes through an encrypted Tailscale mesh VPN, completely bypassing residential ISP Carrier-Grade NAT (CGNAT) without open inbound ports.
+              Caddy reverse proxy on an Always-Free OCI VM terminating wildcard TLS and forwarding traffic across an encrypted Tailscale WireGuard mesh VPN directly to the Mac mini—bypassing residential ISP CGNAT with zero open firewall ports.
             </p>
           </div>
 
@@ -125,19 +140,25 @@ const otherProjects = profileData.projects.filter((p) => p.id !== 'homelab-priva
           <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
             <div class="flex items-center gap-2 mb-2">
               <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-              <h4 class="text-sm font-bold text-slate-900 dark:text-white">Compute Node (Apple M4 Mac Mini)</h4>
+              <h4 class="text-sm font-bold text-slate-900 dark:text-white">PaaS & Ingress (Coolify & Traefik v3)</h4>
             </div>
             <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              Powered by Cosmos Cloud Docker container platform. Hosts compute-heavy services, instant media transcoding, Nextcloud cloud storage, and Immich machine-learning facial recognition models with unmatched energy efficiency.
+              Hosted on Apple M4 Mac mini running OrbStack Docker Engine. Coolify PaaS controller orchestrates container lifecycles while Traefik v3.7 ingress handles dynamic host-based routing across modular Docker Compose stacks.
             </p>
           </div>
 
-          <!-- QNAP NAS Storage Node -->
+          <!-- GitOps CI/CD Node -->
           <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
             <div class="flex items-center gap-2 mb-2">
               <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-              <h4 class="text-sm font-bold text-slate-900 dark:text-white">Storage Node (QNAP 453be NAS)</h4>
+              <h4 class="text-sm font-bold text-slate-900 dark:text-white">GitOps CI/CD (GitHub Actions Self-Hosted Runner)</h4>
             </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Native Apple Silicon GitHub Actions runner communicating via outbound-only WebSockets. Detects repository commits, triggers local Coolify API webhooks, and executes automated rolling container updates with zero inbound attack surface.
+            </p>
+          </div>
+
+        </div>
             <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Portainer-managed Docker platform running redundant private storage arrays, snapshot schedules, local network file shares (SMB/NFS), and automated backup mirrors.
             </p>

@@ -73,7 +73,7 @@ export const profileData: ProfileData = {
   title: "Cloud Solutions Architect & Systems Engineer",
   tagline: "Engineering cloud solutions that are feature-rich, high-performance, and cost-effective.",
   summary:
-    "Cloud Solutions Architect and Systems Engineer specializing in hybrid cloud infrastructure, self-hosted private cloud ecosystems, and automated modern Jamstack deployments. Experienced in bridging edge compute (Cloudflare), cost-effective cloud services (Oracle Cloud Free Tier, AWS), and bare-metal hardware (Apple Silicon, QNAP NAS) connected through encrypted zero-trust meshes. Dedicated to helping projects achieve enterprise-grade resilience, data ownership, and sub-second web performance without bloated recurring costs.",
+    "Cloud Solutions Architect and Systems Engineer specializing in hybrid cloud infrastructure, GitOps self-hosted private cloud ecosystems, and automated modern Jamstack deployments. Experienced in bridging edge compute (Cloudflare, OCI), zero-trust overlay meshes (Tailscale WireGuard), and high-efficiency bare-metal hardware (Apple Silicon Mac mini) running modern PaaS runtimes (Coolify, OrbStack Docker Engine). Dedicated to helping projects achieve enterprise-grade resilience, data ownership, and sub-second web performance without bloated recurring costs.",
   location: "United States (Available Globally / Remote)",
   availability: "Open to Cloud Architecture, DevOps & Homelab Consulting",
   contacts: {
@@ -85,54 +85,54 @@ export const profileData: ProfileData = {
     {
       icon: "cloud",
       title: "Cost-Effective Cloud Architecture",
-      desc: "Architecting hybrid environments that combine cloud free-tiers, edge caching, and serverless compute to deliver enterprise capabilities without unsustainable SaaS bills."
+      desc: "Architecting hybrid environments that combine cloud free-tiers (OCI Always-Free), edge CDN caching, and serverless compute to deliver enterprise capabilities without unsustainable SaaS bills."
     },
     {
       icon: "network",
       title: "Zero-Trust & CGNAT Mesh Networking",
-      desc: "Interconnecting distributed homelab nodes, cloud VPS proxies, and client devices via Tailscale and WireGuard mesh VPNs without opening residential firewall ports."
+      desc: "Interconnecting distributed homelab nodes, cloud edge proxies (Caddy), and client devices via Tailscale WireGuard mesh VPN without opening residential firewall ports."
     },
     {
       icon: "server",
-      title: "Self-Hosted Private Cloud & Containers",
-      desc: "Building sovereign private cloud setups with Docker, Cosmos Cloud, Portainer, Nextcloud, and Immich across Apple M4 Silicon and QNAP NAS storage."
+      title: "Self-Hosted Private PaaS & GitOps",
+      desc: "Deploying sovereign private cloud stacks via Coolify PaaS on macOS with OrbStack Docker Engine and automated GitHub Actions self-hosted runner CI/CD."
     },
     {
       icon: "rocket",
       title: "Modern Jamstack & Automated CI/CD",
-      desc: "Replacing fragile legacy CMS tools with Git-automated static pipelines (Astro, Tailwind, GitHub Actions) that build in seconds and achieve 100/100 Core Web Vitals."
+      desc: "Replacing fragile legacy CMS tools with Git-automated static pipelines (Astro, Tailwind, GitHub Actions) that build in milliseconds and achieve 100/100 Core Web Vitals."
     }
   ],
   skillCategories: [
     {
       name: "Cloud & Edge Infrastructure",
       icon: "cloud",
-      skills: ["Oracle Cloud Infrastructure (OCI)", "Cloudflare (DNS, CDN, WAF, Workers)", "AWS", "GitHub Pages", "Vercel / Netlify", "Jamstack Architecture"]
+      skills: ["Oracle Cloud Infrastructure (OCI Free Tier)", "Cloudflare (DNS, CDN, WAF, DNS-01 ACME)", "AWS", "GitHub Pages", "Vercel", "Jamstack Architecture"]
     },
     {
       name: "Networking & Security",
       icon: "shield",
-      skills: ["Tailscale Mesh VPN", "WireGuard", "CGNAT Bypass", "Nginx Proxy Manager", "SSL/TLS (Let's Encrypt DNS-01)", "Reverse Proxies", "Cloudflare Zero Trust"]
+      skills: ["Tailscale Mesh VPN", "WireGuard Overlay", "CGNAT Bypass", "Caddy Edge Proxy", "Traefik v3 Ingress", "SSL/TLS Wildcard (Let's Encrypt)", "Zero Inbound Attack Surface"]
     },
     {
       name: "Containers & Orchestration",
       icon: "container",
-      skills: ["Docker & Docker Compose", "Cosmos Cloud Engine", "Portainer", "Podman", "Container Hardening", "Multi-arch Builds (ARM64/x86_64)"]
+      skills: ["Coolify PaaS", "OrbStack Docker Engine", "Docker Compose", "Traefik Dynamic Routing", "GitHub Actions Self-Hosted Runner", "Multi-arch ARM64 Builds"]
     },
     {
       name: "Hardware & Self-Hosted Systems",
       icon: "cpu",
-      skills: ["Apple Silicon (M4 Mac mini)", "QNAP NAS (QTS/Linux)", "RAID & ZFS Storage", "Nextcloud (Cloud Storage)", "Immich (Photo Management)", "Home Assistant"]
+      skills: ["Apple Silicon (M4 Mac mini)", "macOS APFS / OrbStack Kernel", "Nextcloud (Cloud Storage)", "Paperless-ngx (OCR Indexing)", "Karakeep / Hoarder", "Uptime Kuma & Telegram Bot Alerts"]
     },
     {
       name: "Modern Frontend & Jamstack",
       icon: "code",
-      skills: ["Astro", "Tailwind CSS", "Next.js", "React", "TypeScript", "Modern HTML5/CSS3", "Responsive Design", "Core Web Vitals Optimization"]
+      skills: ["Astro", "Tailwind CSS", "Next.js", "React / Vite", "TypeScript", "Modern HTML5/CSS3", "Responsive Design", "Core Web Vitals Optimization"]
     },
     {
       name: "DevOps & Automation",
       icon: "terminal",
-      skills: ["GitHub Actions CI/CD", "Git & GitOps", "Bash / Shell Scripting", "Linux Server Administration (Ubuntu/Debian)", "Automated Backups & Monitoring"]
+      skills: ["GitOps Continuous Delivery", "GitHub Actions CI/CD", "Shell Scripting (Bash/Zsh)", "Automated Pre-flight & Cutover Scripts", "Disaster Recovery & Rollback"]
     }
   ],
   experiences: [
@@ -144,12 +144,12 @@ export const profileData: ProfileData = {
       description:
         "Directing the architecture and operational implementation of resilient cloud, edge, and hybrid self-hosted infrastructure for high-performance applications.",
       achievements: [
-        "Designed and operationalized a hybrid-cloud environment connecting edge DNS (Cloudflare), proxy compute (Oracle Cloud Free Tier), and on-premises Apple Silicon/QNAP nodes via encrypted Tailscale meshes.",
+        "Architected an end-to-end GitOps self-hosted private cloud combining OCI edge Caddy ingress, Tailscale WireGuard mesh, and Apple Silicon Mac mini running Coolify PaaS and OrbStack Docker Engine.",
+        "Deployed an outbound-only GitHub Actions Self-Hosted Runner on macOS, enabling zero-inbound-attack-surface automated deployment on every git push.",
         "Engineered zero-trust networking topology bypassing residential ISP CGNAT without exposing internal IP addresses or opening inbound firewall ports.",
-        "Replaced cumbersome CMS tooling with streamlined Git-based Jamstack publishing workflows using Astro and GitHub Actions, cutting build/deploy cycle times by over 80%.",
-        "Configured high-availability self-hosted storage and photo sync systems (Nextcloud & Immich) serving terabytes of encrypted data with automated offsite backup routines."
+        "Configured high-availability containerized microservices including Nextcloud, Paperless-ngx, and Karakeep serving encrypted data with automated backups and Telegram bot alerting."
       ],
-      skills: ["Cloudflare", "Oracle Cloud", "Tailscale", "Docker", "Astro", "GitHub Actions", "Nextcloud", "Immich"]
+      skills: ["Cloudflare", "OCI", "Tailscale", "Coolify", "OrbStack", "Docker", "Astro", "GitHub Actions", "Nextcloud", "Paperless-ngx"]
     },
     {
       company: "Infrastructure & Systems Operations",
@@ -160,11 +160,11 @@ export const profileData: ProfileData = {
         "Managed containerized production workloads, automated deployment pipelines, and multi-domain DNS/security configurations.",
       achievements: [
         "Automated continuous integration and deployment pipelines with GitHub Actions for multi-tier web applications and static sites.",
-        "Configured Nginx Proxy Manager and automated SSL certificate lifecycles via Let's Encrypt for dozens of containerized microservices.",
+        "Configured reverse proxies and automated SSL certificate lifecycles via Let's Encrypt DNS-01 for dozens of containerized microservices.",
         "Consolidated domain portfolios, MX record email routing, and DNSSEC policies using Cloudflare, optimizing resolution latency globally.",
         "Hardened Linux host environments and container runtimes against unauthorized lateral network traversal."
       ],
-      skills: ["Docker", "Nginx Proxy Manager", "Linux", "Bash", "CI/CD", "Let's Encrypt", "DNS/CDN"]
+      skills: ["Docker", "Reverse Proxies", "Linux", "Bash", "CI/CD", "Let's Encrypt", "DNS/CDN"]
     },
     {
       company: "Web Technologies & Jamstack",
@@ -184,40 +184,41 @@ export const profileData: ProfileData = {
   projects: [
     {
       id: "homelab-private-cloud",
-      title: "Self-Hosted Homelab & Hybrid Private Cloud",
-      subtitle: "Enterprise-grade self-hosted infrastructure on Apple Silicon & QNAP NAS with Tailscale CGNAT bypass",
+      title: "Self-Hosted Homelab & GitOps Private Cloud",
+      subtitle: "Enterprise-grade self-hosted PaaS on Apple Silicon (OrbStack) orchestrated via Coolify with automated GitOps CI/CD",
       description:
-        "A complete hybrid private cloud architecture designed for complete data ownership, maximum reliability, and zero ongoing subscription fees. Connects high-performance on-premises hardware with cloud proxy compute.",
+        "A hybrid private cloud architecture designed for total data sovereignty, maximum efficiency, and zero ongoing subscription fees. Connects high-performance Apple Silicon compute with an OCI Caddy edge proxy via an encrypted Tailscale WireGuard mesh.",
       category: "Infrastructure & Cloud",
       featured: true,
       image: "/images/homelab.png",
-      imageCaption: "Complete Homelab Network & Service Architecture Topology",
+      imageCaption: "Updated Homelab System Architecture & Network Topology",
+      githubUrl: "https://github.com/mbabros/homelab",
       liveUrl: "#homelab-details",
-      tags: ["Apple M4 Silicon", "QNAP 453be", "Tailscale", "Oracle Cloud", "Nginx Proxy Manager", "Cosmos Cloud", "Nextcloud", "Immich"],
+      tags: ["Apple Silicon M4", "Coolify PaaS", "OrbStack Docker", "Tailscale WireGuard", "OCI Free Tier", "Caddy", "Traefik v3", "GitHub Actions Runner", "Nextcloud", "Paperless-ngx"],
       highlights: [
-        "Domain & DNS: Cloudflare serves as registrar, CDN, and DNS layer with automated CNAME, MX alias routing, and WAF rules.",
-        "Proxy Layer (Oracle Cloud Free Tier): Nginx Proxy Manager in the cloud receives public traffic and routes securely to homelab nodes via Tailscale, completely bypassing ISP CGNAT.",
-        "Apple Silicon Compute Node: Apple M4 Mac mini running Cosmos Cloud container engine for high-compute workloads and instant transcoding.",
-        "QNAP Storage Node: QNAP TS-453be running Portainer, hosting redundant private cloud storage with Nextcloud and AI-driven photo indexing with Immich.",
-        "Data Sovereignty: Replaces recurring SaaS costs (Google One, iCloud, Dropbox) with sovereign, end-to-end controlled private storage."
+        "Domain & DNS: Cloudflare manages DNS with automated DNS-01 ACME challenge resolution for wildcard TLS (*.<domain>) certificates.",
+        "Edge Ingress (OCI Free Tier): Caddy reverse proxy on an Always-Free VM terminates public TLS and proxies securely over Tailscale WireGuard mesh VPN directly to the Mac mini with zero open firewall ports on the home network.",
+        "PaaS & Dynamic Ingress: Coolify controller on macOS with OrbStack Docker Engine, leveraging Traefik v3.7 ingress (:80/:443) for dynamic Docker container routing.",
+        "Zero-Inbound GitOps CI/CD: Mac Mini GitHub Actions Self-Hosted Runner polls GitHub via outbound WebSockets, executing rolling container updates with zero open inbound ports.",
+        "Application Ecosystem: Nextcloud (private drive), Paperless-ngx (OCR indexing), Karakeep (AI bookmarking), WordPress, and mbabros.com Vite/React with unified Telegram alerting."
       ],
       architecture: {
         components: [
           {
             title: "Domain & DNS (Cloudflare)",
-            desc: "Registrar, DNS manager, MX email routing, and edge caching with DDoS mitigation."
+            desc: "Wildcard DNS routing and automated DNS-01 ACME challenges with DDoS mitigation and global CDN caching."
           },
           {
-            title: "Proxy Layer (Oracle Cloud Free Tier)",
-            desc: "Nginx Proxy Manager in an OCI compute instance connected via Tailscale mesh VPN to securely route inbound requests without public residential IPs."
+            title: "Edge Ingress (Oracle Cloud Free Tier)",
+            desc: "OCI VM running Caddy reverse proxy, terminating TLS and forwarding across Tailscale mesh to avoid CGNAT and eliminate inbound router port forwards."
           },
           {
-            title: "Compute Layer (Apple M4 Mac Mini)",
-            desc: "Cosmos Cloud Docker management platform hosting Nextcloud, Immich AI models, and compute-intensive microservices."
+            title: "Primary Compute & PaaS (Apple M4 Mac Mini)",
+            desc: "macOS running OrbStack Docker engine and Coolify PaaS controller with Traefik v3 ingress for automatic host-based routing."
           },
           {
-            title: "Storage Layer (QNAP 453be NAS)",
-            desc: "Portainer Docker platform orchestrating redundant storage arrays, automated snapshot policies, and local backup mirrors."
+            title: "GitOps CI/CD (GitHub Actions Self-Hosted Runner)",
+            desc: "Outbound long-polling runner executing local docker-compose orchestrations instantly on git push without webhooks or public ingress."
           }
         ]
       }
@@ -248,10 +249,10 @@ export const profileData: ProfileData = {
         "Engineered an encrypted zero-trust mesh network connecting residential servers behind Carrier-Grade NAT (CGNAT) with public edge nodes, allowing secure multi-domain reverse proxying without port forwarding.",
       category: "Networking & Security",
       featured: false,
-      tags: ["Tailscale", "WireGuard", "Nginx", "CGNAT", "Security"],
+      tags: ["Tailscale", "WireGuard", "Caddy", "Traefik", "CGNAT Bypass", "Zero Inbound Ports"],
       highlights: [
         "Bypassed residential ISP carrier-grade NAT with zero port forwards or static IP requirements.",
-        "Automated DNS-01 Let's Encrypt certificate renewal for all internal and public hostnames.",
+        "Automated DNS-01 Let's Encrypt wildcard certificate renewal for all internal and public hostnames.",
         "Direct peer-to-peer connection prioritization with encrypted DERP fallback when NAT traversal fails."
       ]
     }
@@ -272,7 +273,7 @@ export const profileData: ProfileData = {
     },
     {
       name: "Container Security & Zero-Trust Networking",
-      issuer: "Tailscale / Docker Ecosystems",
+      issuer: "Coolify / Tailscale / Docker Ecosystems",
       date: "Ongoing"
     }
   ]
