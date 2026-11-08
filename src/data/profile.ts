@@ -190,7 +190,7 @@ export const profileData: ProfileData = {
         "A hybrid private cloud architecture designed for total data sovereignty, maximum efficiency, and zero ongoing subscription fees. Connects high-performance Apple Silicon compute with an OCI Caddy edge proxy via an encrypted Tailscale WireGuard mesh.",
       category: "Infrastructure & Cloud",
       featured: true,
-      image: "/images/homelab.png",
+      image: "/images/homelab-architecture.png",
       imageCaption: "Updated Homelab System Architecture & Network Topology",
       githubUrl: "https://github.com/mbabros/homelab",
       liveUrl: "#homelab-details",

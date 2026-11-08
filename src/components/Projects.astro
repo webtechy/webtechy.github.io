@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import homelabDiagram from '../assets/images/homelab-architecture.png';
 import { profileData } from '../data/profile';
 
 const homelabProject = profileData.projects.find((p) => p.id === 'homelab-private-cloud') || profileData.projects[0];
@@ -91,8 +93,8 @@ const otherProjects = profileData.projects.filter((p) => p.id !== 'homelab-priva
             id="diagram-container"
             class="group relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-950 cursor-pointer shadow-inner"
           >
-            <img
-              src="/images/homelab.png"
+            <Image
+              src={homelabDiagram}
               alt="Homelab Architecture Diagram"
               class="w-full h-auto object-contain max-h-[500px] transition-transform duration-300 group-hover:scale-[1.01]"
               loading="lazy"
@@ -276,7 +278,7 @@ const otherProjects = profileData.projects.filter((p) => p.id !== 'homelab-priva
 
   <div class="max-w-6xl max-h-[90vh] overflow-auto rounded-xl border border-slate-800 bg-slate-900 p-2">
     <img
-      src="/images/homelab.png"
+      src={homelabDiagram.src}
       alt="Full Homelab Architecture Topology"
       class="w-full h-auto max-h-[85vh] object-contain rounded-lg"
     />
